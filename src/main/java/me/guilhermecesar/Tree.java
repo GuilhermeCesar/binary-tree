@@ -2,11 +2,28 @@ package me.guilhermecesar;
 
 public class Tree {
 
-    Node root;
-    Integer size;
+    private Node root;
+    private Integer size;
 
     public Tree() {
         size = 0;
+    }
+
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
     }
 
     void insert(Integer info, Node place) {
@@ -26,4 +43,38 @@ public class Tree {
             }
         }
     }
+
+    void preOrder(Node place) {
+        System.out.print(" " + place.getInfo() + ",");
+
+        if (place.getLeft() != null) {
+            preOrder(place.getLeft());
+        }
+
+        if (place.getRight() != null) {
+            preOrder(place.getRight());
+        }
+    }
+
+    void inOrder(Node place) {
+        if (place.getLeft() != null) {
+            inOrder(place.getLeft());
+        }
+        System.out.print(" " + place.getInfo());
+        if (place.getRight() != null) {
+            inOrder(place.getRight());
+        }
+    }
+
+    void posOrder(Node place) {
+        if (place.getLeft() != null) {
+            posOrder(place.getLeft());
+        }
+        if (place.getRight() != null) {
+            posOrder(place.getRight());
+        }
+        System.out.print(" " + place.getInfo());
+    }
+
+
 }

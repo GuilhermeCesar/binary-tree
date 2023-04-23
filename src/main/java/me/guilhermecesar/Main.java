@@ -1,19 +1,24 @@
 package me.guilhermecesar;
 
-// Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        // Press ⌥⏎ with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Random random = new Random();
 
-        // Press ⌃R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Tree tree = new Tree();
 
-            // Press ⌃D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing ⌘F8.
-            System.out.println("i = " + i);
+        for (int i =0;i<10;i++){
+            tree.insert(random.nextInt(100), tree.getRoot());
         }
+
+        System.out.println("\n PRE-ORDER: ");
+        tree.preOrder(tree.getRoot());
+
+        System.out.println("\n IN-ORDER:");
+        tree.inOrder(tree.getRoot());
+
+        System.out.println("\n POS-ORDER:");
+        tree.posOrder(tree.getRoot());
     }
 }
