@@ -45,7 +45,7 @@ public class Tree {
     }
 
     void preOrder(Node place) {
-        System.out.print(" " + place.getInfo() + ",");
+        System.out.print(" " + place.getInfo());
 
         if (place.getLeft() != null) {
             preOrder(place.getLeft());
